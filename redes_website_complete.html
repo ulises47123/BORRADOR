@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes - IES 5-2024</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #e2e8f0; }
+        .nav-link { @apply text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition; }
+        .nav-link-mobile { @apply text-slate-300 hover:bg-slate-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium; }
+        /* Carousel styles */
+        .carousel { position: relative; }
+        .carousel-slide { display: none; }
+        .carousel-slide.active { display: block; }
+        /* Dropdown delay */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 200ms ease-in-out, visibility 0s linear 200ms;
+        }
+        .group:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0s;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen bg-slate-950">
+
+        <!-- Hero Section -->
+        <header id="inicio" class="relative h-64 md:h-80 bg-black flex items-center justify-center animate__animated animate__fadeIn">
+            <img src="https://placehold.co/1600x600/020617/0ea5e9?text=Imagen+de+Redes" alt="Fondo Redes" class="absolute inset-0 w-full h-full object-cover opacity-30" />
+            <div class="relative text-center z-10">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white uppercase">REDES</h1>
+                <p class="mt-2 text-xl md:text-2xl text-slate-300">IES 5 - 2024</p>
+                <img src="foto-logo.ico" alt="Logo IES 5" class="mx-auto mt-4 h-16 w-16 animate__animated animate__fadeIn" />
+            </div>
+        </header>
+
+        <!-- Navbar -->
+        <nav class="bg-slate-900 sticky top-0 border-y border-slate-700/50 z-40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex space-x-4">
+                        <a href="#inicio" class="nav-link">Inicio</a>
+                        <div class="relative group inline-block">
+                            <a href="#" class="nav-link">Introducción a las Redes de Computadoras</a>
+                            <div class="dropdown-menu absolute left-0 mt-2 w-48 bg-slate-800 rounded-md shadow-lg z-10">
+                                <a href="#" class="block px-4 py-2 text-slate-200 text-sm hover:bg-slate-700">El modelo OSI</a>
+                                <a href="#" class="block px-4 py-2 text-slate-200 text-sm hover:bg-slate-700">Glosario</a>
+                                <a href="#" class="block px-4 py-2 text-slate-200 text-sm hover:bg-slate-700">Subneteo</a>
+                                <a href="#" class="block px-4 py-2 text-slate-200 text-sm hover:bg-slate-700">Medios</a>
+                            </div>
+                        </div>
+                        <div class="relative group inline-block">
+                            <a href="#" class="nav-link">Redes de Área Local LAN</a>
+                            <div class="dropdown-menu absolute left-0 mt-2 w-48 bg-slate-800 rounded-md shadow-lg z-10">
+                                <a href="#" class="block px-4 py-2 text-slate-200 text-sm hover:bg-slate-700">Topología</a>
+                                <a href="#" class="block px-4 py-2 text-slate-200 text-sm hover:bg-slate-700">Dispositivos de Networking</a>
+                                <a href="#" class="block px-4 py-2 text-slate-200 text-sm hover:bg-slate-700">Interfaces de red</a>
+                            </div>
+                        </div>
+                        <div class="relative group inline-block">
+                            <a href="#" class="nav-link">Armado de una Red Pequeña</a>
+                            <div class="dropdown-menu absolute left-0 mt-2 w-48 bg-slate-800 rounded-md shadow-lg z-10">
+                                <a href="#" class="block px-4 py-2 text-slate-200 text-sm hover:bg-slate-700">Cable par trenzado</a>
+                                <a href="#" class="block px-4 py-2 text-slate-200 text-sm hover:bg-slate-700">Instalar una placa</a>
+                                <a href="#" class="block px-4 py-2 text-slate-200 text-sm hover:bg-slate-700">Configuración de Internet</a>
+                            </div>
+                        </div>
+                        <a href="#" class="nav-link">Packet Tracer CISCO</a>
+                        <a href="#consigna" class="nav-link">Información</a>
+                    </div>
+                    <!-- Search Icon -->
+                    <div class="hidden md:block">
+                        <button class="bg-slate-800 p-2 rounded-full text-slate-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+                            <span class="sr-only">Buscar</span>
+                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button" class="bg-slate-800 p-2 rounded-md text-slate-400 hover:text-white focus:outline-none" aria-expanded="false">
+                            <span class="sr-only">Abrir menú</span>
+                            <svg id="menu-icon" class="h-6 w-6 block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                            <svg id="close-icon" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-slate-900">
+                <a href="#inicio" class="nav-link-mobile">Inicio</a>
+                <details class="group">
+                    <summary class="nav-link-mobile cursor-pointer">Introducción a las Redes de Computadoras</summary>
+                    <div class="pl-4 dropdown-menu">
+                        <a href="#" class="nav-link-mobile">El modelo OSI</a>
+                        <a href="#" class="nav-link-mobile">Glosario</a>
+                        <a href="#" class="nav-link-mobile">Subneteo</a>
+                        <a href="#" class="nav-link-mobile">Medios</a>
+                    </div>
+                </details>
+                <details class="group">
+                    <summary class="nav-link-mobile cursor-pointer">Redes de Área Local LAN</summary>
+                    <div class="pl-4 dropdown-menu">
+                        <a href="#" class="nav-link-mobile">Topología</a>
+                        <a href="#" class="nav-link-mobile">Dispositivos de Networking</a>
+                        <a href="#" class="nav-link-mobile">Interfaces de red</a>
+                    </div>
+                </details>
+                <details class="group">
+                    <summary class="nav-link-mobile cursor-pointer">Armado de una Red Pequeña</summary>
+                    <div class="pl-4 dropdown-menu">
+                        <a href="#" class="nav-link-mobile">Cable par trenzado</a>
+                        <a href="#" class="nav-link-mobile">Instalar una placa</a>
+                        <a href="#" class="nav-link-mobile">Configuración de Internet</a>
+                    </div>
+                </details>
+                <a href="#" class="nav-link-mobile">Packet Tracer CISCO</a>
+                <a href="#consigna" class="nav-link-mobile">Información</a>
+            </div>
+        </nav>
+
+        <!-- Consigna -->
+        <main id="consigna" class="px-4 pb-16">
+            <div class="max-w-4xl mx-auto bg-slate-900 rounded-lg p-8 md:p-10 border border-slate-700/50">
+                <h2 class="text-3xl font-bold text-cyan-400 uppercase text-center mb-6">Consigna</h2>
+                <div class="prose prose-invert text-slate-300 max-w-none">
+                    <p>Estimados alumnos, esta actividad tiene por objetivo realizar un resumen de todo lo aprendido en esta unidad: <strong>Armar una red pequeña</strong>. Cada grupo debe crear un sitio en Google Sites y todos los integrantes deben aportar y quedar registrados en la herramienta colaborativa.</p>
+                    <h3>Para realizar esta actividad se pide:</h3>
+                    <ul>
+                        <li>Crear por grupo una página web con textos, imágenes, videos, etc. usando Google Sites.</li>
+                        <li>Compartir el link a <a href="mailto:eagraneros@gmail.com" class="text-cyan-400">eagraneros@gmail.com</a> para seguimiento.</li>
+                        <li>Responder con el enlace de la página creada.</li>
+                    </ul>
+                    <h3>Se evaluará:</h3>
+                    <ul>
+                        <li>Creatividad en el diseño del sitio.</li>
+                        <li>Temas incluidos y aportes personales en cada sección.</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <!-- Info & Credits -->
+        <section class="bg-blue-800 py-6">
+            <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-6 px-4 text-white text-center">
+                <p><strong>Cátedra:</strong> Redes</p>
+                <p><strong>Docente:</strong> Ing. Granero Eduardo</p>
+                <p><strong>Compilación, Diseño por:</strong> ROXANA BENICIO Y FRANCO CRUZ</p>
+            </div>
+        </section>
+
+        <!-- Sugeridos -->
+        <section id="sugerencias" class="py-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold text-cyan-400 uppercase text-center mb-8">Sugeridos</h2>
+                <div class="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                    <div class="bg-slate-900 rounded-lg overflow-hidden border border-slate-700/50">
+                        <img class="h-48 w-full object-cover" src="https://placehold.co/600x400/1e293b/e2e8f0?text=Introducción+a+Redes" alt="Introducción a redes">
+                        <div class="p-4 bg-slate-800 text-center">
+                            <h3 class="font-semibold text-white">Introducción a redes informáticas</h3>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 rounded-lg overflow-hidden border border-slate-700/50">
+                        <img class="h-48 w-full object-cover" src="https://placehold.co/600x400/1e293b/e2e8f0?text=Armado+de+Cable+de+Red" alt="Armado de cable">
+                        <div class="p-4 bg-slate-800 text-center">
+                            <h3 class="font-semibold text-white">Armado de Cable de Red</h3>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 rounded-lg overflow-hidden border border-slate-700/50">
+                        <img class="h-48 w-full object-cover" src="https://placehold.co/600x400/1e293b/e2e8f0?text=Glosario+de+Redes" alt="Glosario">
+                        <div class="p-4 bg-slate-800 text-center">
+                            <h3 class="font-semibold text-white">Glosario de redes informáticas</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black py-4 text-center text-slate-500 text-sm">
+            &copy; 2024 IES 5 - Redes. Todos los derechos reservados.
+        </footer>
+    </div>
+
+    <!-- Carousel Script -->
+    <script>
+        const slides = document.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        let current = 0;
+        document.getElementById('nextSlide').addEventListener('click', () => {
+            slides[current].classList.remove('active');
+            indicators[current].classList.remove('bg-cyan-400');
+            indicators[current].classList.add('bg-slate-600');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+            indicators[current].classList.add('bg-cyan-400');
+        });
+        document.getElementById('prevSlide').addEventListener('click', () => {
+            slides[current].classList.remove('active');
+            indicators[current].classList.remove('bg-cyan-400');
+            indicators[current].classList.add('bg-slate-600');
+            current = (current - 1 + slides.length) % slides.length;
+            slides[current].classList.add('active');
+            indicators[current].classList.add('bg-cyan-400');
+        });
+        indicators.forEach(ind => {
+            ind.addEventListener('click', () => {
+                slides[current].classList.remove('active');
+                indicators[current].classList.remove('bg-cyan-400');
+                indicators[current].classList.add('bg-slate-600');
+                current = parseInt(ind.dataset.slide);
+                slides[current].classList.add('active');
+                indicators[current].classList.add('bg-cyan-400');
+            });
+        });
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !expanded);
+            menu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
